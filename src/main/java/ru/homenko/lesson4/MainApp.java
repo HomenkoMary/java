@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class MainApp {
     public static int SIZE = 3;
-    public static int DOTS_TO_WIN = 3;
     public static final String DOT_EMPTY = "•";
     public static final String DOT_X = "X";
     public static final String DOT_O = "O";
@@ -42,7 +41,7 @@ public class MainApp {
     }
 
     public static boolean checkLine(int start_x, int start_y, int dx, int dy, String sign) {
-        for (int i = 0; i < 3; i++)
+        for (int i = 0; i <= SIZE; i++)
         {
             if (map[start_x + i * dx][start_y + i * dy] != sign)
                 return false;
@@ -51,7 +50,7 @@ public class MainApp {
     }
 
     public static boolean checkWin(String sign) {
-        for (int i = 0; i < 2; i++)
+        for (int i = 0; i <= SIZE; i++)
         {
             if (checkLine(i, 0, 0, 1, sign)) return true;
             if (checkLine(0, i, 1, 0, sign)) return true;
